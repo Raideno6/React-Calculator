@@ -14,9 +14,21 @@ code {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(8, 1fr);
 }
 
+.grid .calculatorDisplay {
+  grid-column: 1/9;
+  height: 75px;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  font-size: inherit;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.calculatorDisplay {
+  background: white;
+}
 
 .item {
   grid-column: span 2;
@@ -34,7 +46,47 @@ code {
   border-radius: 10px;
 }
 
+.calculatorButton {
+  background-color: rgb(197, 197, 197);
+}
 .calculatorButton:hover {
-  background-color: grey;
-  color: white;
+  background-color: rgb(228, 228, 228);
+  color: black;
+}
+
+.calculatorButton:active {
+  background-color: rgb(228, 228, 228);
+  color: black;
+  border: 3px outset rgb(37, 37, 37);
+}
+
+.item:nth-child(4n +1) .calculatorButton{
+  background-color:darkgray;
+}
+
+.item:nth-child(4n +1) .calculatorButton:hover{
+  background-color: rgb(210, 210, 210);
+  color: black;
+}
+
+.item:nth-child(4n +1) .calculatorButton:active {
+  background-color: rgb(210, 210, 210);
+  color: black;
+  border: 3px outset rgb(37, 37, 37);
+}
+
+
+.item:nth-child(16) .calculatorButton{
+  background-color:rgb(163, 221, 231);
+}
+
+.item:nth-child(16) .calculatorButton:hover{
+  background-color:rgb(173, 243, 255);
+  color: black;
+}
+
+.item:nth-child(16) .calculatorButton:active {
+  background-color:rgb(173, 243, 255);
+  color: black;
+  border: 3px outset rgb(37, 37, 37);
 }

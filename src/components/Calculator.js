@@ -9,7 +9,8 @@ export default class Calculator extends Component {
     render() {
         return (
             <div className="grid">
-                {[7, 8, 9, 4, 5, 6, 1, 2, 3, "C", 0, "RES", "+", "-", "*", "/"].map((i) => this.renderCalculatorButton(i))}
+                <input type="text" id="calculatorField" inputMode="numeric" className="calculatorDisplay"/>
+                {[7, 8, 9, "÷", 4, 5, 6, "x", 1, 2, 3, "-" ,".", 0, "=", "+"].map((i) => this.renderCalculatorButton(i))}
             </div>
         );
     } 
