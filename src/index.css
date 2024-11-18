@@ -14,7 +14,12 @@ code {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(8, auto, auto);
+  width: 520px;
+}
+
+.grid > *:nth-child(2), .grid > *:nth-child(3) {
+  grid-column: span 4;
 }
 
 .grid .calculatorDisplay {
@@ -35,20 +40,17 @@ code {
   font-size: small;
 }
 
-
 .calculatorButton {
   font-size: 50px;
   cursor: pointer;
   border:  3px outset black;
+  background-color: rgb(197, 197, 197);
 
   height: 75px;
-  width: 130px;
+  width: 100%; 
   border-radius: 10px;
 }
 
-.calculatorButton {
-  background-color: rgb(197, 197, 197);
-}
 .calculatorButton:hover {
   background-color: rgb(228, 228, 228);
   color: black;
@@ -60,33 +62,48 @@ code {
   border: 3px outset rgb(37, 37, 37);
 }
 
-.item:nth-child(4n +1) .calculatorButton{
+.item:nth-child(4n + 7) .calculatorButton{
   background-color:darkgray;
 }
 
-.item:nth-child(4n +1) .calculatorButton:hover{
+.item:nth-child(4n + 7) .calculatorButton:hover{
   background-color: rgb(210, 210, 210);
   color: black;
 }
 
-.item:nth-child(4n +1) .calculatorButton:active {
+.item:nth-child(4n + 7) .calculatorButton:active {
   background-color: rgb(210, 210, 210);
   color: black;
   border: 3px outset rgb(37, 37, 37);
 }
 
 
-.item:nth-child(16) .calculatorButton{
+.item:nth-child(18) .calculatorButton{
   background-color:rgb(163, 221, 231);
 }
 
-.item:nth-child(16) .calculatorButton:hover{
+.item:nth-child(18) .calculatorButton:hover{
   background-color:rgb(173, 243, 255);
   color: black;
 }
 
-.item:nth-child(16) .calculatorButton:active {
+.item:nth-child(18) .calculatorButton:active {
   background-color:rgb(173, 243, 255);
+  color: black;
+  border: 3px outset rgb(37, 37, 37);
+}
+
+.item:nth-child(2) .calculatorButton, .item:nth-child(3) .calculatorButton {
+  background-color:rgb(230, 46, 55);
+}
+
+.item:nth-child(2) .calculatorButton:hover, .item:nth-child(3) .calculatorButton:hover {
+  background-color:rgb(255, 94, 102);
+  color: black;
+}
+
+.item:nth-child(2) .calculatorButton:active, .item:nth-child(3) .calculatorButton:active {
+  background-color:rgb(255, 94, 102);
   color: black;
   border: 3px outset rgb(37, 37, 37);
 }
