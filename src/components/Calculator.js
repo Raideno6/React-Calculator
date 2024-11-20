@@ -2,7 +2,7 @@ import CalculatorButton from "./CalculatorButton"
 import React, { Component } from "react";
 
 export default class Calculator extends Component {
-    state = { message: "test" }
+    state = { message: "" }
     callbackFunction = (childData) => {
        this.setState({message: childData})
     }
