@@ -7,14 +7,21 @@ export default class CalculatorButton extends Component {
     super(props);
     this.buttonRef = React.createRef();
   }
+    string = "";
+    sendBackData = (value) => {
+      this.string = calculate(value);
+      console.log(this.string)
+      this.props.parentCallback(this.string);
+    }
+
     render() {
       return (
-        <button ref={this.buttonRef} key={this.props.value} className='calculatorButton' onClick={e => calculate(this.props.value)}>
+        <button ref={this.buttonRef} key={this.props.value} className='calculatorButton' onClick={e => this.sendBackData(this.props.value)}>
           {this.props.value}
         </button>
       )
     }
-  }
+  };
 
   var inputString = "";
   const calculate = (buttonValue) => {
@@ -59,5 +66,8 @@ export default class CalculatorButton extends Component {
         inputString = "";
       }
     }
+
+    return inputString;
   }
+
   
