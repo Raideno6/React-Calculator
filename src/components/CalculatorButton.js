@@ -30,8 +30,8 @@ export default class CalculatorButton extends Component {
         buttonValue = "*";
         break;
       case "÷": 
-      buttonValue = "/";
-      break;
+        buttonValue = "/";
+        break;
     }
     if (buttonValue !== "DEL" && buttonValue !== "AC" && buttonValue !== "=") {
       inputString.toString();
