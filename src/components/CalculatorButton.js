@@ -25,8 +25,8 @@ export default class CalculatorButton extends Component {
 
   var operators = ["+","-","*","/"];
   var inputString = "";
-  var operatorIndex;
   var previousInput = "";
+  var prevInputFound = false;
   const calculate = (buttonValue) => {
     switch (buttonValue){
       case "x": 
@@ -60,21 +60,27 @@ export default class CalculatorButton extends Component {
 
     else if (buttonValue === "="){
       try {
+      var operatorIndex = -1;
       var ans = eval(inputString)
-
       if (ans === inputString){
 
         operators.forEach(operator => {
           var temp = previousInput.lastIndexOf(operator);
-          if (temp > -1){
+          if (temp > operatorIndex){
             operatorIndex = temp;
+            prevInputFound = true;
           }
         });
-
-        var ans = eval(inputString + previousInput.substring(operatorIndex));
+        previousInput = inputString + previousInput.substring(operatorIndex)
+        var ans = eval(previousInput);
         
       }
-      console.log("The answer is: " + ans)
+
+      if (prevInputFound){
+        prevInputFound = false;
+        inputString = ans;
+        return  [inputString, previousInput];
+      }
       previousInput = inputString;
       inputString = ans;
 
@@ -88,7 +94,7 @@ export default class CalculatorButton extends Component {
       }
     }
 
-    return inputString;
+    return [inputString, previousInput];
   }
 
   
