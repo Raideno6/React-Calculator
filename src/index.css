@@ -1,10 +1,12 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 code {
@@ -15,7 +17,8 @@ code {
 .grid {
   display: grid;
   grid-template-columns: repeat(8, auto, auto);
-  width: 520px;
+  width: 100%;
+  height: 100%;
 }
 
 .grid > *:nth-child(2), .grid > *:nth-child(3) {
@@ -25,6 +28,7 @@ code {
 .grid .calculatorDisplay {
   grid-column: 1/9;
   height: 75px;
+
   margin-bottom: 15px;
   border-radius: 20px;
   font-size: inherit;
@@ -45,8 +49,7 @@ code {
   cursor: pointer;
   border:  3px outset black;
   background-color: rgb(197, 197, 197);
-
-  height: 75px;
+  max-height: 75px;
   width: 100%; 
   border-radius: 10px;
 }
@@ -106,4 +109,17 @@ code {
   background-color:rgb(255, 94, 102);
   color: black;
   border: 3px outset rgb(37, 37, 37);
+}
+
+.container {
+  width: 30vw;
+  height: 50vw;
+  max-height: 75px;
+  max-width: 500px;
+  padding-bottom: 60vw;
+  padding-left: 1vw;
+}
+
+.Equation {
+  float: left;
 }

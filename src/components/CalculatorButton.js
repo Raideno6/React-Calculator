@@ -71,14 +71,15 @@ export default class CalculatorButton extends Component {
             prevInputFound = true;
           }
         });
-        var ans = eval(inputString + previousInput.substring(operatorIndex));
+        previousInput = inputString + previousInput.substring(operatorIndex)
+        var ans = eval(previousInput);
         
       }
 
       if (prevInputFound){
         prevInputFound = false;
         inputString = ans;
-        return inputString;
+        return  [inputString, previousInput];
       }
       previousInput = inputString;
       inputString = ans;
@@ -93,7 +94,7 @@ export default class CalculatorButton extends Component {
       }
     }
 
-    return inputString;
+    return [inputString, previousInput];
   }
 
   
